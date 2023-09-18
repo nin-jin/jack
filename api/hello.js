@@ -4,7 +4,7 @@ export default function handler(request, response) {
             "version": request.body.version,
             "session": request.body.session,
             "response": {
-                "text": 'Привет',
+                "text": 'Мама, спокойно ночи',
                 "end_session": false,
             }
         }));
