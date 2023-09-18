@@ -1,11 +1,10 @@
 export default function handler(request, response) {
-  const { name = 'World' } = request.query;
   return response.send(JSON.stringify({
-            "version": request.body.version,
-            "session": request.body.session,
-            "response": {
-                "text": 'Мама, спокойно ночи',
-                "end_session": false,
-            }
-        }));
+      "version": request.body.version,
+      "session": request.body.session,
+      "response": {
+          "text": request.body.request.command,
+          "end_session": false,
+      }
+  }));
 }
