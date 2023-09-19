@@ -7,7 +7,7 @@ export default function handler(request, response) {
   if( command === 'повтори' ) {
     resp = text
     text = ''
-  } if( comand ) {
+  } if( command ) {
     text += ' ' + command
   } else if( !text ) {
     resp = 'слушаю'
