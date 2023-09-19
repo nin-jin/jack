@@ -2,7 +2,7 @@ let text = ''
 export default function handler(request, response) {
 
   const command = request.body.request.command
-  let resp = 'да'
+  let resp = ''
 
   if( command === 'повтори' ) {
     resp = text
@@ -15,7 +15,7 @@ export default function handler(request, response) {
       "version": request.body.version,
       "session": request.body.session,
       "response": {
-          "text": resp,
+          "text": text ? ( resp || '.' ) : 'слушаюю',
           "end_session": false,
       }
   })
