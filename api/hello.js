@@ -7,15 +7,17 @@ export default function handler(request, response) {
   if( command === 'повтори' ) {
     resp = text
     text = ''
-  } else {
+  } if( comand ) {
     text += ' ' + command
+  } else if( !text ) {
+    resp = 'слушаю'
   }
   
   return response.send({
       "version": request.body.version,
       "session": request.body.session,
       "response": {
-          "text": text ? ( resp || '.' ) : 'слушаюю',
+          "text": resp || '.',
           "end_session": false,
       }
   })
