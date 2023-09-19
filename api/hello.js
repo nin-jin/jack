@@ -2,7 +2,7 @@ let text = ''
 export default function handler(request, response) {
 
   const command = request.body.request.command
-  let resp = void 0
+  let resp = ' '
 
   if( command === 'повтори' ) {
     resp = text
